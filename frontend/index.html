@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Inventory Management System</h1>
+  </header>
+
+  <main>
+    <div id="message" class="message hidden"></div>
+    <div id="low-stock-banner" class="banner hidden"></div>
+
+    <section class="card">
+      <h2>Add Product</h2>
+      <form id="add-form" novalidate>
+        <input type="text" id="name" placeholder="Product name" required>
+        <input type="text" id="category" placeholder="Category" required>
+        <input type="number" id="quantity" placeholder="Quantity" min="0" step="1" required>
+        <input type="number" id="price" placeholder="Price" min="0" step="0.01" required>
+        <button type="submit">Add Product</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Search</h2>
+      <div class="search-row">
+        <input type="text" id="search-input" placeholder="Search by name, ID or category">
+        <button id="search-btn">Search</button>
+        <button id="clear-btn" class="secondary">Show All</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Products</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="product-table"></tbody>
+      </table>
+      <p id="empty-text" class="hidden">No products found.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
